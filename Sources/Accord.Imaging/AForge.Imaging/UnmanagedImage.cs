@@ -994,12 +994,12 @@ namespace Accord.Imaging
         /// 
         public Color GetPixel(int x, int y)
         {
-            if ((x < 0) || (y < 0))
+            if ((x < 0) || (x >= width))
             {
                 throw new ArgumentOutOfRangeException("x", "The specified pixel coordinate is out of image's bounds.");
             }
 
-            if ((x >= width) || (y >= height))
+            if ((y < 0) || (y >= height))
             {
                 throw new ArgumentOutOfRangeException("y", "The specified pixel coordinate is out of image's bounds.");
             }
